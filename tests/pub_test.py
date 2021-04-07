@@ -7,7 +7,7 @@ class TestPub(unittest.TestCase):
         self.pub = Pub("The Prancing Pony", 100.00)
 
     def test_pub_has_name(self):
-        self.assertEqual("The Prancing Pony", self.pub.name)
+        self.assertEqual("The Prancing Pony", self.pub.pub_name)
 
     #@unittest.skip("Delete this line to run the test")
     def test_pub_has_money(self):
