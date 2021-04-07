@@ -12,14 +12,19 @@ class Pub:
         return customer.wallet >= drink.price
 
     def take_customer_money(self, customer, drink):
-        if self.check_customer_wallet(customer, drink) == True:
-            customer.wallet -= drink.price
-            return customer.wallet
+       if self.check_customer_wallet(customer, drink) == True:
+        customer.wallet -= drink.price
+        return customer.wallet
 
-    def add_to_till(self, customer,drink):
+    def add_to_till(self, customer, drink):
         if self.check_customer_wallet(customer, drink) == True:
             self.till += drink.price
             return self.till
+
+    def age_id(self, customer):
+        return customer.age >= 18
+
+
 
     # def sell_drink_to_customer(self, customer, drink):
     #    drink = self.(drink_name)
