@@ -6,7 +6,7 @@ from src.drink import Drink
 class TestPub(unittest.TestCase):
     
     def setUp(self):
-        self.pub = Pub("The Prancing Pony", 100.00)
+        self.pub = Pub("The Prancing Pony", 100)
         self.customer_1 = Customer("Ben", 10)
         self.customer_2 = Customer("Adam", 1)
         self.drink = Drink("Tennents", 2)
@@ -33,7 +33,9 @@ class TestPub(unittest.TestCase):
     def test_customer_money_reduced(self):
         self.assertEqual(8, self.pub.take_customer_money(self.customer_1, self.drink))
     
-    
+    def test_add_money_to_till(self):
+        self.assertEqual(102, self.pub.add_to_till(self.customer_1, self.drink))
+
 
 
 

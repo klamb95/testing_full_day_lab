@@ -16,6 +16,11 @@ class Pub:
             customer.wallet -= drink.price
             return customer.wallet
 
+    def add_to_till(self, customer,drink):
+        if self.check_customer_wallet(customer, drink) == True:
+            self.till += drink.price
+            return self.till
+
     # def sell_drink_to_customer(self, customer, drink):
     #    drink = self.(drink_name)
     #    customer.reduce_cash(pet.price)
