@@ -5,3 +5,6 @@ class Customer:
         self.customer_inventory = []
         self.age = age
         self.drunkenness_level = drunkenness_level
+
+    def buy_drink(self, drink):
+            self.wallet -= drink.price

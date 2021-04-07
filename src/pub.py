@@ -8,8 +8,18 @@ class Pub:
     def stock_count(self):
         return len(self.drinks_list)
 
+    def add_drink(self, drink):
+        self.drinks_list.append(drink)
+
     def check_customer_wallet(self, customer, drink):
         return customer.wallet >= drink.price
+
+    def serve(self, customer, drink):
+        if self.stock_count(drink) == 0:
+            return
+        self.drinks.remove(drink)
+        customer.buy_drink(drink)
+        self.till += drink.price    
 
     def take_customer_money(self, customer, drink):
        if self.check_customer_wallet(customer, drink) == True:
@@ -25,9 +35,8 @@ class Pub:
         return customer.age >= 18
 
     def get_customer_drunk(self, customer, drink):
-        if self.check_customer_wallet(customer, drink) == True:
-            drink.alcohol_level += customer.drunkenness_level
-            return customer.drunkenness_level
+        customer.drunkenness_level += drink.alcohol_level
+        return customer.drunkenness_level
 
 
 
