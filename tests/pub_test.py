@@ -7,8 +7,8 @@ class TestPub(unittest.TestCase):
     
     def setUp(self):
         self.pub = Pub("The Prancing Pony", 100)
-        self.customer_1 = Customer("Ben", 10, 18)
-        self.customer_2 = Customer("Adam", 1, 12)
+        self.customer_1 = Customer("Ben", 10, 18, 0)
+        self.customer_2 = Customer("Adam", 1, 12, 0)
         self.drink = Drink("Tennents", 2, 1)
 
     def test_pub_has_name(self):
@@ -41,6 +41,9 @@ class TestPub(unittest.TestCase):
 
     def test_customer_id(self):
         self.assertEqual(False, self.pub.age_id(self.customer_2))
+
+    def test_customer_drunk(self):
+        self.assertEqual(1, self.pub.get_customer_drunk(self.customer_1, self.drink))
 
 
 

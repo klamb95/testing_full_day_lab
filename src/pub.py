@@ -24,6 +24,11 @@ class Pub:
     def age_id(self, customer):
         return customer.age >= 18
 
+    def get_customer_drunk(self, customer, drink):
+        if self.check_customer_wallet(customer, drink) == True:
+            drink.alcohol_level += customer.drunkenness_level
+            return customer.drunkenness_level
+
 
 
     # def sell_drink_to_customer(self, customer, drink):
